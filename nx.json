@@ -3,9 +3,23 @@
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": ["default"],
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
+    "sharedGlobals": [
+      "{workspaceRoot}/.github/workflows/ci.yml",
+      "{workspaceRoot}/go.work"
+    ]
   },
   "nxCloudId": "67fc756a79bca31eee133412",
+  "targetDefaults": {
+    "@nx-go/nx-go:build": {
+      "cache": true
+    },
+    "@nx-go/nx-go:lint": {
+      "cache": true
+    },
+    "@nx-go/nx-go:test": {
+      "cache": true
+    }
+  },
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
@@ -20,6 +34,7 @@
           "watchDepsName": "watch-deps"
         }
       }
-    }
+    },
+    "@nx-go/nx-go"
   ]
 }
